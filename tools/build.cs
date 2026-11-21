@@ -106,7 +106,7 @@ public class Build {
         InitFixed();
         var freq = new Dictionary<char, double>();
         foreach (var r in Recs) {
-            double w = r.Bytes ? 10 : 1;
+            double w = r.Id.StartsWith("W") ? 100000 : r.Bytes ? 10 : 1;
             foreach (char c in Layout(r)) {
                 if (c == PAGE || c == '\uFFFE' || Fixed.ContainsKey(c)) continue;
                 double f; freq.TryGetValue(c, out f); freq[c] = f + w;
@@ -414,8 +414,10 @@ public class Build {
         Log = new StreamWriter(Work + @"\build_log.txt", false, new UTF8Encoding(false));
         LoadByteRecs(Work + @"\tr\navi_ja.tsv", Work + @"\tr\navi_ko.tsv");
         LoadByteRecs(Work + @"\tr\lab_ja.tsv", Work + @"\tr\lab_ko.tsv");
+        LoadByteRecs(Work + @"\tr\weapon_ja.tsv", Work + @"\tr\weapon_ko.tsv");
         LoadHwRecs(Work + @"\tr\hw_ja.tsv", Work + @"\tr\hw_ko.tsv");
         LoadHwRecs(Work + @"\tr\db_ja.tsv", Work + @"\tr\db_ko.tsv");
+        LoadHwRecs(Work + @"\tr\pocket_ja.tsv", Work + @"\tr\pocket_ko.tsv");
         // boot overlay (00.bin, RLE) with nested warning TIM
         List<byte[]> bootH, timH; List<int> bootO, timO;
         var boot = Rle.Decode(F("00.bin"), out bootH, out bootO);
