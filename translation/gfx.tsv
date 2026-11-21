@@ -1,0 +1,138 @@
+# file	timoff	kind	text	options...
+# ---- mode select (15.bin) ----
+15.bin	012CC4	label	모드 선택	ol=2
+15.bin	0177B4	label	오리지널 모드
+15.bin	017C0C	label	나비 모드
+15.bin	018064	label	Dr.라이트 연구소
+15.bin	0188BC	label	옵션
+15.bin	018D14	label	포켓스테이션
+15.bin	01916C	label	사운드 룸
+15.bin	0195C4	label	미션 모드
+15.bin	01CB0C	label	그 명작/록맨4를/충실히 이식!!	font=NSN-dEb	ttop=1	tbot=46	size=12.5
+15.bin	01D8E4	label	힌트 시스템 탑재/파워업 파츠도 쓰는/초친절 모드!!	font=NSN-dEb	ttop=1	tbot=46	size=12.5
+15.bin	01E6BC	label	록맨을 파워업!/적 데이터베이스와/포케로쿠 링크도!	font=NSN-dEb	ttop=1	tbot=46	size=12.5
+15.bin	01F494	label	난이도 설정과/버튼 설정을/변경·저장할 수 있다	font=NSN-dEb	ttop=1	tbot=46	size=12.5
+15.bin	02026C	label	포켓스테이션에/「포케로쿠4」를/다운로드!!	font=NSN-dEb	ttop=1	tbot=46	size=12.5
+15.bin	021044	label	게임에 쓰인/음악을 들을 수/있다!!	font=NSN-dEb	ttop=1	tbot=46	size=12.5
+15.bin	021E1C	label	너는 특별 미션을/클리어할 수/있을까!?	font=NSN-dEb	ttop=1	tbot=46	size=12.5
+# ---- mission ----
+15.bin	03B1A4	label	최고 기록	rect=6,2,52,12	bg=15	fill=1	ol=0
+15.bin	03B3FC	label	멧톨을 쓰러뜨려라!!	fill=15	olc=14	ol=1
+15.bin	03B8D4	label	결전! 타코 트래시!!	fill=15	olc=14	ol=1
+15.bin	03BDAC	label	칼린카를 구하라!!	fill=15	olc=14	ol=1
+15.bin	03C284	label	대전! 와일리 넘버즈!!	fill=15	olc=14	ol=1
+15.bin	03C75C	label	모드 선택으로	fill=15	olc=14	ol=1
+15.bin	03F0B4	label	미션 클리어!!	fill=15	olc=14	ol=1
+15.bin	03F50C	label	신기록!!	fill=15	olc=14	ol=1
+15.bin	03F964	label	게임 오버	fill=15	olc=14	ol=1
+15.bin	03FDBC	label	한 번 더 도전	fill=15	olc=14	ol=1
+15.bin	040214	label	모드 메뉴로	fill=15	olc=14	ol=1
+# ---- option ----
+15.bin	040F6C	label	옵션
+15.bin	041184	label	게임 난이도
+15.bin	0414DC	label	게임 속도
+15.bin	041774	label	버튼 설정
+15.bin	041A0C	label	사운드 설정
+15.bin	041D24	label	메모리 카드
+15.bin	041FBC	label	록맨 인원수
+15.bin	042314	label	모드 선택으로
+15.bin	0426EC	label	쉬움!
+15.bin	0428C4	label	보통
+15.bin	042A1C	label	어려움
+15.bin	042BF4	label	느림
+15.bin	042D4C	label	보통
+15.bin	042EA4	label	로드
+15.bin	042FFC	label	세이브
+15.bin	043154	label	스테레오
+15.bin	04332C	label	모노
+# ---- button config (13.bin) ----
+13.bin	0000AC	label	버튼 설정
+13.bin	000344	label	공격	align=l	margin=0
+13.bin	00049C	label	점프	align=l	margin=0
+13.bin	000674	label	슬라이딩	align=l	margin=0
+13.bin	00094C	label	무기 좌	align=l	margin=0
+13.bin	000BA4	label	무기 우	align=l	margin=0
+13.bin	000DBC	label	러시 체인지	align=l	margin=0
+13.bin	0010D4	label	아이템 체인지	bg=0	fill=1	align=l	margin=0
+13.bin	0013C0	label	연사 샷	align=l	margin=0
+13.bin	001658	label	진동	align=l	margin=0
+13.bin	0017B0	label	초기화	align=l	margin=0
+13.bin	001A08	label	설정 종료	align=l	margin=0
+13.bin	002278	label	방향키로 화면 조정
+13.bin	002840	label	결정
+13.bin	002998	label	초기화
+13.bin	003400	label	끔	rect=0,0,32,16
+13.bin	003400	label	켬	rect=32,0,32,16
+# ---- in-game pause (19.bin) ----
+19.bin	008A80	label	록 버스터	font=G7	align=l	margin=0	ol=0	fill=2	bg=0
+19.bin	008BB8	label	플래시 스토퍼	font=G7	align=l	margin=0	ol=0	fill=2	bg=0
+19.bin	008D30	label	레인 플래시	font=G7	align=l	margin=0	ol=0	fill=2	bg=0
+19.bin	008E88	label	드릴 봄	font=G7	align=l	margin=0	ol=0	fill=2	bg=0
+19.bin	008F80	label	파라오 샷	font=G7	align=l	margin=0	ol=0	fill=2	bg=0
+19.bin	0090B8	label	링 부메랑	font=G7	align=l	margin=0	ol=0	fill=2	bg=0
+19.bin	009210	label	더스트 크래셔	font=G7	align=l	margin=0	ol=0	fill=2	bg=0
+19.bin	009388	label	다이브 미사일	font=G7	align=l	margin=0	ol=0	fill=2	bg=0
+19.bin	0094C0	label	스컬 배리어	font=G7	align=l	margin=0	ol=0	fill=2	bg=0
+19.bin	0095F8	label	러시 코일	font=G7	align=l	margin=0	ol=0	fill=2	bg=0
+19.bin	009730	label	러시 마린	font=G7	align=l	margin=0	ol=0	fill=2	bg=0
+19.bin	009868	label	러시 제트	font=G7	align=l	margin=0	ol=0	fill=2	bg=0
+19.bin	0099A0	label	와이어	font=G7	align=l	margin=0	ol=0	fill=2	bg=0
+19.bin	009A78	label	벌룬	font=G7	align=l	margin=0	ol=0	fill=2	bg=0
+19.bin	015400	label	게임으로	rect=24,1,80,14	bg=14	ol=1	fill=9	olc=4
+19.bin	0157D8	label	맵	rect=24,1,80,14	bg=14	ol=1	fill=9	olc=4
+19.bin	015BB0	label	버튼 설정	rect=24,1,80,14	bg=14	ol=1	fill=9	olc=4
+19.bin	015F88	label	화면 조정	rect=24,1,80,14	bg=14	ol=1	fill=9	olc=4
+19.bin	016360	label	타이틀로	rect=24,1,80,14	bg=14	ol=1	fill=9	olc=4
+19.bin	01BD10	label	로드	rect=24,0,32,16
+19.bin	01BF28	label	취소	rect=24,0,32,16
+19.bin	01C140	label	세이브	rect=24,0,32,15
+19.bin	01C33C	label	취소	rect=24,0,32,16
+19.bin	01CD84	label	데이터
+# ---- lab (26.bin) ----
+26.bin	015838	label	Dr.라이트 연구소	bg=11	ol=2	fill=15	olc=7	olc2=0	rect=2,2,156,20
+26.bin	016010	label	파워업 파츠	fillrgb=255,255,255
+26.bin	017B48	label	파워업	bgx=103	rect=2,2,101,12	align=l	ol=0	fill=15
+26.bin	017F20	label	잡몹 데이터베이스	bgx=103	rect=2,2,101,12	align=l	ol=0	fill=15
+26.bin	0182F8	label	보스 데이터베이스	bgx=103	rect=2,2,101,12	align=l	ol=0	fill=15
+26.bin	0186D0	label	일러스트 데이터	bgx=103	rect=2,2,101,12	align=l	ol=0	fill=15
+26.bin	018AA8	label	포케로쿠 링크	bgx=103	rect=2,2,101,12	align=l	ol=0	fill=15
+26.bin	018E80	label	로드	bgx=103	rect=2,2,101,12	align=l	ol=0	fill=15
+26.bin	019258	label	세이브	bgx=103	rect=2,2,101,12	align=l	ol=0	fill=15
+26.bin	019630	label	모드 선택으로	bg=13	rect=2,2,101,12	align=l	ol=0	fill=1
+26.bin	01A3C8	label	하이퍼 점프	bgx=103	rect=2,2,101,12	align=l	ol=0	fill=1
+26.bin	01A7A0	label	오토 차지	bgx=103	rect=2,2,101,12	align=l	ol=0	fill=1
+26.bin	01AB78	label	에너지 세이버	bgx=103	rect=2,2,101,12	align=l	ol=0	fill=1
+26.bin	01AF50	label	하이퍼 샷	bgx=103	rect=2,2,101,12	align=l	ol=0	fill=1
+26.bin	01B328	label	하이퍼 차지 샷	bgx=103	rect=2,2,101,12	align=l	ol=0	fill=1
+26.bin	01B700	label	파워 샷	bgx=103	rect=2,2,101,12	align=l	ol=0	fill=1
+26.bin	01BAD8	label	하이퍼 차지	bgx=103	rect=2,2,101,12	align=l	ol=0	fill=1
+26.bin	01BEB0	label	스피드 업	bgx=103	rect=2,2,101,12	align=l	ol=0	fill=1
+# ---- database / pokeroku ----
+25.bin	01566C	label	데이터베이스No.	font=G7	bg=1	fill=15	ol=0	align=l	margin=0
+27.bin	007264	label	포케로쿠 링크
+# ---- vertical / icons / misc ----
+15.bin	037B54	label	미/션	rect=0,40,48,150	keep=9	bg=0	ol=1	olc=1	size=34	fillrgb=255,255,255
+15.bin	03DB5C	label	결/과	rect=0,40,48,150	keep=9	bg=0	ol=1	olc=1	size=34	fillrgb=255,255,255
+19.bin	01D23C	label	셀렉트	rect=15,1,24,8	font=G7	bg=5	fill=2	ol=0	margin=0
+19.bin	01D23C	label	세이브	rect=14,16,26,13	bg=15	fill=1	olc=6	ol=1	margin=0	font=G9
+19.bin	01D534	label	셀렉트	rect=15,1,24,8	font=G7	bg=5	fill=2	ol=0	margin=0
+19.bin	01D534	label	로드	rect=14,16,26,13	bg=15	fill=1	olc=6	ol=1	margin=0	font=G9
+26.bin	009788	label	파워업 파츠	rect=33,149,100,8	font=G7	bg=6	fill=2	ol=0	align=l	margin=0
+01.bin	00026C	label	지금 로딩 중・・・	rect=150,214,152,20	bg=35939	fill=32767	olc=32768	ol=1	size=14	align=l	margin=2
+# ---- illustrations (29.bin, 8bpp 224x160) ----
+29.bin	00002C	label	원래는 가정용 도우미/로봇이었지만 Dr.와일리/의 야망을 막기 위해/라이트 박사가 전투용/로봇 「록맨」으로/개조했다./코사크 박사와의 싸움/에서 기다리는 것은?	rect=101,37,121,121	bgmode=row	fillrgb=255,255,255	olrgb=0,16,64	ol=1	size=11.5	ttop=1	tbot=119	align=l	margin=2
+29.bin	008E4C	label	록맨4/와일리 성	rect=134,15,68,32	fillrgb=40,40,40	ol=0	size=12	align=l	margin=1
+29.bin	008E4C	label	록맨4/코사크 성	rect=22,100,70,28	fillrgb=40,40,40	ol=0	size=12	align=l	margin=1
+29.bin	01AA8C	label	코사크 박사/Dr.와일리와 같이/세계 정복을 꾸미는/것처럼 보였지만,/딸 칼린카가 납치되어/Dr.와일리에게/조종당하고 있었다.	rect=87,49,119,95	bgmode=row	fillrgb=255,255,255	olrgb=0,40,24	ol=1	size=11	ttop=1	tbot=93	align=l	margin=2
+29.bin	0238AC	label	칼린카/코사크의 외동딸./Dr.와일리에게/붙잡히면서도/와일리 기지를 조사해/록맨을/서포트했다.	rect=87,49,113,95	bgmode=row	fillrgb=255,255,255	olrgb=200,30,110	ol=1	size=11	ttop=1	tbot=93	align=l	margin=2
+29.bin	04FF4C	label	여기까지 록맨4를/플레이해 줘서 고마워!/답례로 비밀을/알려 줄게!/다른 사람한텐 비밀이야!/R2 버튼을 누르면서/나비 모드를 선택하면…	rect=6,44,135,110	bgmode=row	fillrgb=255,255,255	olrgb=60,10,40	ol=1	size=11.5	ttop=1	tbot=108	align=l	margin=2
+# ---- boot warning ----
+warn.tim	0	label	게임을 할 때는/방을 밝게 하고/되도록 TV에서/떨어져서 놀아요/1시간 놀았으면/쉬어 주세요/그런데 편식하지/않고 무엇이든/잘 먹고 있나요?	rect=46,33,154,124	bgmode=row	fillrgb=255,255,255	olrgb=20,40,20	ol=1	size=12	ttop=1	tbot=122	align=l	margin=1
+# ---- logos ----
+14.bin	012E60	logo	록맨	rect=44,42,158,54	keepred=1	stretch=1	skew=0.25	weight=eHv	fill=1820EE;1031EE;084AF6;0062F6;0094FF;39ACE6;C5D5FF;FFFFFF	rings=FFFFFF;C5C5CD	erect=22,38,200,47/22,85,177,12
+14.bin	012E60	logo	새로운 야망!!	rect=84,98,118,30	gray=70	colors=131,131,197;106,123,172;82,90,148	fill=FFFFFF	rings=none	olw=2	outline=101010
+01.bin	00026C	logo	록맨	rect=18,188,82,26	keepred=1	stretch=1	skew=0.25	weight=eHv	fill=1820EE;084AF6;0094FF;39ACE6;C5D5FF;FFFFFF	rings=none	erect=14,186,92,22/14,208,80,6
+01.bin	00026C	logo	새로운 야망!!	rect=38,216,58,14	gray=70	fill=FFFFFF	rings=none	outline=101010
+15.bin	011C64	logo	록맨	rect=19,11,80,22	keepred=1	stretch=1	skew=0.25	weight=eHv	fill=1820EE;084AF6;0094FF;39ACE6;C5D5FF;FFFFFF	rings=none	erect=12,8,92,28
+15.bin	025B2C	label	힘내라,/록!	rect=51,8,57,30	bgrgb=255,255,255	fillrgb=0,0,0
+15.bin	02E8D4	label	상태	rect=55,44,30,7	bgrgb=255,255,255	fillrgb=0,0,0	font=G7
