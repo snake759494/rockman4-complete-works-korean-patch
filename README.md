@@ -13,7 +13,7 @@ PlayStation용 **『ロックマン4 新たなる野望!!』(SLPS-02324, 록맨 
 | 메모리카드·포켓스테이션 메시지 | 약 140개 전부 |
 | 무기 화면 설명 | **15 / 15** |
 | 다시 그린 그래픽 | 메뉴·라벨·일러스트·로고 약 130장 |
-| 본편(NES) 오프닝 | 7페이지 + 「AD 200X년」 |
+| 본편(NES) 오프닝·이벤트 대화 | 오프닝 7페이지 + 「AD 200X년」 + 칼린카·코사크·와일리 대화 10페이지 |
 | 폰트에 넣은 한글 | 545자 (최대 약 1,000자 수용) |
 
 ![타이틀](docs/images/02_title.png)
@@ -54,8 +54,8 @@ xdelta.exe -d -s "Rockman 4 - Aratanaru Yabou!! (Japan).bin" Rockman4_CompleteWo
 ```
 파일   Rockman 4 - Aratanaru Yabou!! (Korean).bin
 크기   620,591,664 바이트
-MD5    B1FA21BF97CA82140CF17D715FDDDD81
-SHA-1  9556D1B5038DAE0AA80192DD70DC6333FB6B0B1D
+MD5    5A0845B0F4FA7D3B4D4BA16ADA90F7A1
+SHA-1  8B6E2736D4207623F17CE56F7A95248265727116
 ```
 
 ### 실행

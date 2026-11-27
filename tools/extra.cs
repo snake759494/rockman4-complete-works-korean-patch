@@ -310,32 +310,53 @@ public static class Extra {
     static int NesSlot(int c) { return c <= 0x56 ? c + 29 : c + 28; }
     public static void NesOpening() {
         string f = Build.Work + @"\tr\nes_ko.tsv"; if (!File.Exists(f)) return;
-        var pages = File.ReadAllLines(f, Encoding.UTF8).Where(l => l.Trim() != "" && !l.StartsWith("#")).Select(l => l.Split('\t')[1]).ToList();
+        var rows = File.ReadAllLines(f, Encoding.UTF8).Where(l => l.Trim() != "" && !l.StartsWith("#")).ToList();
+        var pages = rows.Where(l => l.StartsWith("P")).Select(l => l.Split('\t')[1]).ToList();
+        var dlg = rows.Where(l => l.StartsWith("D")).ToList();
         // free codes
         var free = new List<int>();
         for (int c = 0x0B; c <= 0x55; c++) free.Add(c);
         for (int c = 0x59; c <= 0x79; c++) if (c != 0x5F && c != 0x62 && c != 0x63) free.Add(c);
         var map = new Dictionary<char, int>();
-        map[' '] = 0x00; map['・'] = 0x63; map['8'] = 0x08; map['0'] = 0x05; map['2'] = 0x06;
+        map[' '] = 0x00; map['・'] = 0x63; map['8'] = 0x08; map['0'] = 0x05; map['2'] = 0x06; map['!'] = 0x09;
+        bool oom = false;
+        Action<List<byte>, string> encLine = (ob, line) => {
+            string ln = line.Replace("Dr.", "\u0001"); int cells = 0;
+            foreach (char ch in ln) {
+                if (ch == '\u0001') { ob.Add(0x02); ob.Add(0x04); cells += 2; continue; }
+                int code;
+                if (!map.TryGetValue(ch, out code)) {
+                    if (free.Count == 0) { if (!oom) Build.Fail("NES: out of tiles at '" + ch + "'"); oom = true; continue; }
+                    code = free[0]; free.RemoveAt(0); map[ch] = code;
+                }
+                ob.Add((byte)code); cells++;
+            }
+            if (cells > 24) Build.Fail("NES line too long (" + cells + "): " + line);
+        };
         var outB = new List<byte>();
         foreach (var pg in pages) {
             var lines = pg.Split('/');
-            for (int li = 0; li < lines.Length; li++) {
-                string ln = lines[li].Replace("Dr.", "\u0001");
-                int cells = 0;
-                foreach (char ch in ln) {
-                    if (ch == '\u0001') { outB.Add(0x02); outB.Add(0x04); cells += 2; continue; }
-                    int code;
-                    if (!map.TryGetValue(ch, out code)) {
-                        if (free.Count == 0) { Build.Fail("NES: out of tiles at '" + ch + "'"); return; }
-                        code = free[0]; free.RemoveAt(0); map[ch] = code;
-                    }
-                    outB.Add((byte)code); cells++;
-                }
-                if (cells > 24) Build.Fail("NES line too long (" + cells + "): " + lines[li]);
-                if (li < lines.Length - 1) outB.Add(0xFD);
-            }
+            for (int li = 0; li < lines.Length; li++) { encLine(outB, lines[li]); if (li < lines.Length - 1) outB.Add(0xFD); }
             outB.Add(0xFF);
+        }
+        // event dialogue: D<n> \t start \t end(inclusive, terminator pos) \t endcode \t page|page ; page = [name>]line/line
+        var dlgOut = new List<Tuple<int, int, List<byte>>>();
+        foreach (var row in dlg) {
+            var p = row.Split('\t'); int st = Convert.ToInt32(p[1], 16), en = Convert.ToInt32(p[2], 16); int endc = Convert.ToInt32(p[3], 16);
+            var ob = new List<byte>();
+            foreach (var pg in p[4].Split('|')) {
+                string body = pg;
+                int gt = pg.IndexOf('>'); if (gt >= 0) { encLine(ob, pg.Substring(0, gt)); ob.Add(0xFD); ob.Add(0x0A); body = pg.Substring(gt + 1); }
+                var lines = body.Split('/');
+                for (int li = 0; li < lines.Length; li++) { encLine(ob, lines[li]); if (li < lines.Length - 1) ob.Add(0xFD); }
+                ob.Add(0xFE);
+            }
+            if (endc == 0xFF) ob.Add(0xFF);
+            if (ob.Count > en - st + 1) Build.Fail(p[0] + ": " + ob.Count + " > " + (en - st + 1));
+            dlgOut.Add(Tuple.Create(st, en, ob));
+        }
+        foreach (var dd in dlgOut) { var r2 = Build.F("22.bin"); int st = dd.Item1, en = dd.Item2; var ob = dd.Item3;
+            for (int i = st; i <= en; i++) { int k = i - st; r2[i] = k < ob.Count ? ob[k] : (byte)0xFF; }
         }
         const int S = 0x378D5, E = 0x37A7D;
         if (outB.Count > E - S) { Build.Fail("NES text too long: " + outB.Count + " > " + (E - S)); return; }
@@ -350,6 +371,7 @@ public static class Extra {
             for (int y = 0; y < 8; y++) for (int x = 0; x < 8; x++) t.Set(cx + x, cy + y, x < gm.GetLength(0) && gm[x, y] ? 1 : 0);
         }
         { int n = NesSlot(0x7A); int cx = 4 + 8 * (n % 31), cy = 36 + 8 * (n / 31); var gm = GetBdf("G7").Line("년", 8, 7); for (int y = 0; y < 8; y++) for (int x = 0; x < 8; x++) t.Set(cx + x, cy + y, x < gm.GetLength(0) && gm[x, y] ? 1 : 0); }
+        File.WriteAllLines(Build.Work + @"\nesmap.txt", map.Select(kv => kv.Key + "	" + kv.Value.ToString("X2")).ToArray(), new UTF8Encoding(false));
         Build.Warn(string.Format("NES opening: {0} bytes / {1}, {2} glyph tiles, {3} free left", outB.Count, E - S, map.Count - 2, free.Count));
     }
 
